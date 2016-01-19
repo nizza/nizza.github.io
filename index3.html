@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>Belllllllaaaaaa </title>
+  </head>
+  <body>
+  <img src="http://cookiesync.azurewebsites.net/pixel.png" alt="Pixel something" onload="getCookie()" >
+  <script>
+      function getCookie() {
+
+        $.ajax({
+               url: "http://cookiesync.azurewebsites.net/api/SetCookie/fr",
+                  xhrFields: {
+                            withCredentials: true
+                               }
+               });
+      }
+</script>
+  </body>
+</html>
+
