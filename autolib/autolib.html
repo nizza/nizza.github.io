@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+	<style type="text/css">
+		 /* Set the size of the div element that contains the map */
+      #map {
+        height: 500px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+	</style>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+ integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+ crossorigin=""/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+<!--   <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css"> -->
+
+  
+
+ <link rel="stylesheet" href="https://unpkg.com/vuetify/dist/vuetify.min.css">
+
+
+</head>
+<body>
+
+		<div class="container" id="app">
+      <v-app>
+        <v-content>
+
+          <div class="row">
+            <div class="col-lg-12" >
+              <h1>Where are the autolibs!?</h1>
+            </div>
+          </div>
+
+    			<div class="row">
+
+    	      <div class="col-lg-4">
+
+              <div class="dropdown">
+                <v-select
+                  class="input-group--focused"
+                  :items="times"
+                  v-model="timeSelected"
+                  v-on:change="onTimeChange"
+                  label="Select time"
+                  item-value="time"
+                >
+                </v-select>
+              </div>
+
+            </div>
+
+    				<div class="col-lg-8">
+    					<div id='map'>
+    					</div>
+    				</div>
+
+    			</div>
+
+        </v-content>
+      </v-app>
+
+		</div>
+
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+
+    
+		<!-- <script src="//unpkg.com/element-ui@2.3.9/lib/index.js"></script> -->
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="//unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+
+  	<!-- <script src="https://unpkg.com/vue-material@beta"></script> -->
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+     integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+     crossorigin=""></script>  
+
+<!--     <script src="https://cdn.jsdelivr.net/npm/heatmap.js@2.0.5/build/heatmap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.min.js"></script> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+    
+
+
+    <script src='./autolib.js' type='text/javascript'></script>
+		
+
+</body>
+</html>
