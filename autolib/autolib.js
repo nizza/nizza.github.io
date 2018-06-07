@@ -3,7 +3,7 @@
 
 d3.queue()
     //.defer(d3.json, "/data/geojson/departements.json")
-    .defer(d3.csv, "data/all_data.csv")
+    .defer(d3.csv, "./data/all_data.csv")
     .await(initMap);
 
 function initMap(error, dataCsv) {
